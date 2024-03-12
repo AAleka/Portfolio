@@ -11,7 +11,8 @@
       background-color: aliceblue;  
     }
     
-    nav {
+    /* Navigation Bar */
+    nav.navbar {
         text-align: center;
     }
     .navbar ul {
@@ -21,11 +22,9 @@
         overflow: hidden;
         background-color: darkolivegreen;
     }
-    
     .navbar li {
         display: inline-block;
     }
-    
     .navbar a {
         display: block;
         color: azure;
@@ -34,14 +33,32 @@
         font-size: 25px;
         text-decoration: none;
     }
-    
     .navbar a:hover {
         background-color:darkgreen;
     }
+    /* Navigation Bar */
     
-    .active {
-        background-color: darkolivegreen;
+    /* About div block */
+    div.about {
+        background-color: antiquewhite;
+        text-align: center;
+        margin: 30px auto;
+        border: 2px solid darkolivegreen;
+        width: 80%;
     }
+    div.about h2 {
+        padding-left: 10px;
+        text-align: left;
+        color:darkcyan;
+    }
+    
+    #role {
+        font-size: 15px;
+        padding-right: 10px;
+        float: right;
+    }
+    /* About div block */
+    
 </style>
     
 <body>
@@ -53,6 +70,11 @@
             <li><a href="https://www.linkedin.com/in/alnur-alimanov-4b5518179" target="_blank">Contact me</a></li>
         </ul>
     </nav>
+    
+    <div class="about">
+        <h2>Alnur Alimanov <span id="role">Software/Artificial Intelligence Developer</span></h2>
+        <p></p>
+    </div>
 </body>
 
 </html>
