@@ -58,22 +58,20 @@
 
     .text {
         width: 60%;
-        float right;
         font-size: 25px;
         color: azure;
-        text-align: justify;
-        margin: 10px auto;
-        background: linear-gradient(to right, #F0FFFF, 
-                    #F8F8FF, #FFFFF0, #eedd44);
+        text-align: left;
+        margin: auto;
+        background: linear-gradient(to right, #F0FFFF, #F8F8FF, #FFFFF0, #eedd44);
         -webkit-text-fill-color: transparent; 
         -webkit-background-clip: text; 
     }
-    
+
     /* For mobile devices */
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
         div.about {
             flex-direction: column; /* Stack elements vertically */
-            text-align: center; /* Center-align text */
+            align-items: center; /* Center-align items */
         }
 
         .text {
@@ -82,7 +80,6 @@
         }
     }
     /* About div block */
-    
 </style>
     
 <body>
