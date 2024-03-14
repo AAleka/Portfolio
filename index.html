@@ -8,7 +8,8 @@
 
 <style>
     body {
-      background-color: floralwhite;  
+        background-color: floralwhite;
+        font-family: Arial, Helvetica, sans-serif;
     }
     
     /* Navigation Bar */
@@ -51,8 +52,9 @@
         grid-template-columns: 1fr 1fr 1fr;
         column-gap: 5px;
     }
+    
     .image {
-        margin: 10px;
+        margin-left: 10px;
         max-height: 100%;
         max-width: 100%;
     }
@@ -61,6 +63,11 @@
         color: azure;
         text-align: justify;
         margin: 20px 10px auto;
+        
+        background: linear-gradient(to right, #F0FFFF, 
+                    #F8F8FF, #FFFFF0, #eedd44);
+        -webkit-text-fill-color: transparent; 
+        -webkit-background-clip: text; 
     }
     /* About div block */
     
@@ -78,7 +85,7 @@
     
     <div class="about">
         <div class="image">
-            <img src="images/me.jpeg" width="90%">
+            <img src="images/me.jpeg" width="100%">
         </div>
         
         <div class="text">
