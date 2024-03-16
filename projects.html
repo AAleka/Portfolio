@@ -41,19 +41,17 @@
     
     /* Projects div block */
     .projects {
-        margin: 30px auto;
-        width: 80%;
-        display: flex;
-        align-items: center;
-        border: 1px solid black;
-    }
-    
-    .projects div {
-        text-align: left;
         margin: auto;
+        width: 80%;
+        
+    }
+    .project {
+        border: 1px solid black;
+        margin: 30px auto;
+        padding: 30px;
+        text-align: justify;
     }
     /* Projects div block */
-    
 </style>
     
 <body>
@@ -67,10 +65,29 @@
     </nav>
     
     <div class="projects">
-        <div>
-            <iframe src="https://github.com/AAleka/chat-server" width="100%" height="500px"></iframe>
+        <div class="project">
+            <h2>
+                Instant messaging application (Server).
+            </h2>
+            <p>
+                I utilized C++ and several libraries including ASIO for networking, OpenSSL for end-to-end encryption and decryption, and SQLite3 for database management.
+            </p>
+            <p>
+                The server side is run locally on my Raspberry Pi SBC, and is responsible for ensuring safe real-time intercommunication between clients with end-to-end encryption and decryption, storage of chat history, and connections.  
+            </p>
         </div>
-    
+        
+        <div class="project">
+            <h2>
+                Instant messaging application (Client).
+            </h2>
+            <p>
+                I utilized C++ and several libraries including ASIO for networking, OpenSSL for end-to-end encryption and decryption, GLFW, ImGui, and stb for the client-side GUI application.
+            </p>
+            <p>
+                The client side includes a GUI part and a TCP connection with the server, which are run concurrently.   
+            </p>
+        </div>
     </div>
 </body>
 
