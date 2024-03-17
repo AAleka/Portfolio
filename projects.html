@@ -42,14 +42,29 @@
     /* Projects div block */
     .projects {
         margin: auto;
-        width: 80%;
-        
+        width: 100%;
     }
+
     .project {
+        width: 60%;
         border: 1px solid black;
         margin: 30px auto;
         padding: 30px;
-        text-align: justify;
+        text-align: left;
+        background-color: lightgoldenrodyellow;
+        overflow: hidden;
+        position: relative;
+        transition: width 0.5s ease, margin 0.5s ease; /* Add transition for margin */
+    }
+
+    .project:hover {
+        width: calc(60% + 60px); /* Adjusted width on hover */
+    }
+
+    .projects a {
+        text-decoration: none;
+        color: black;
+        display: block; /* Ensure the link takes up the entire space of the project */
     }
     /* Projects div block */
 </style>
@@ -65,29 +80,106 @@
     </nav>
     
     <div class="projects">
-        <div class="project">
-            <h2>
-                Instant messaging application (Server).
-            </h2>
-            <p>
-                I utilized C++ and several libraries including ASIO for networking, OpenSSL for end-to-end encryption and decryption, and SQLite3 for database management.
-            </p>
-            <p>
-                The server side is run locally on my Raspberry Pi SBC, and is responsible for ensuring safe real-time intercommunication between clients with end-to-end encryption and decryption, storage of chat history, and connections.  
-            </p>
-        </div>
-        
-        <div class="project">
-            <h2>
-                Instant messaging application (Client).
-            </h2>
-            <p>
-                I utilized C++ and several libraries including ASIO for networking, OpenSSL for end-to-end encryption and decryption, GLFW, ImGui, and stb for the client-side GUI application.
-            </p>
-            <p>
-                The client side includes a GUI part and a TCP connection with the server, which are run concurrently.   
-            </p>
-        </div>
+        <a href="https://github.com/AAleka/chat-client" target="_blank">
+            <div class="project">
+                <h2>
+                    Instant messaging application (Server).
+                </h2>
+                <p>
+                    A C++ project with CMake and several libraries including ASIO for networking, OpenSSL for end-to-end encryption and decryption, and SQLite3 for database management. The server side is run locally on my Raspberry Pi SBC, and is responsible for ensuring safe real-time intercommunication between clients with end-to-end encryption and decryption, storage of chat history, and connections.  
+                </p>
+            </div>
+        </a>
+        <a href="https://github.com/AAleka/chat-server" target="_blank">
+            <div class="project">
+                <h2>
+                    Instant messaging application (Client).
+                </h2>
+                <p>
+                    A C++ project with CMake and several libraries including ASIO for networking, OpenSSL for end-to-end encryption and decryption, GLFW, ImGui, and stb for the client-side GUI application. The client side includes a GUI part and a TCP connection with the server, which are run concurrently.   
+                </p>
+            </div>
+        </a>
+        <a href="https://github.com/AAleka/vsfm" target="_blank">
+            <div class="project">
+                <h2>
+                    GUI file managing application.
+                </h2>
+                <p>
+                    A C++ project with CMake and an ImGui library. It is supported on Windows and Linux systems.
+                </p>
+            </div>
+        </a>
+        <a href="https://github.com/AAleka/OnlyTasks" target="_blank">
+            <div class="project">
+                <h2>
+                    Desktop task managing application.
+                </h2>
+                <p>
+                    A C++ project with Qt and SQL. It is supported on Windows and Linux systems.
+                </p>
+            </div>
+        </a>
+        <a href="https://github.com/AAleka/Ades" target="_blank">
+            <div class="project">
+                <h2>
+                    Web-planner application.
+                </h2>
+                <p>
+                    A project in HTML, CSS, JavaScript, and Python. It is run locallyusing Python server for storing tasks and plans.
+                </p>
+            </div>
+        </a>
+        <a href="https://github.com/AAleka/taskmanager" target="_blank">
+            <div class="project">
+                <h2>
+                    Task managing console application.
+                </h2>
+                <p>
+                    A C++ project with CMake for storing tasks locally.
+                </p>
+            </div>
+        </a>
+        <a href="https://github.com/AAleka/SelfDrivingCarSimulation" target="_blank">
+            <div class="project">
+                <h2>
+                    Self-driving car simulation.
+                </h2>
+                <p>
+                    A deep learning project with Python and TensorFlow. A deep learning model trained to control a car in the Udacity car simulation.
+                </p>
+            </div>
+        </a>
+        <a href="https://github.com/AAleka/SteamDBScraper" target="_blank">
+            <div class="project">
+                <h2>
+                    Web-scraping application for SteamDB.
+                </h2>
+                <p>
+                    A web-scraping application for SteamDB that notifies over email if there are available discounts for selected games with Selenium, a browser automation library for Python, inside a Docker container.
+                </p>
+            </div>
+        </a>
+        <a href="https://github.com/AAleka/RockPaperScissorSimulation" target="_blank">
+            <div class="project">
+                <h2>
+                    Rock, Scissor, Paper simulation.
+                </h2>
+                <p>
+                    A console-based simulation in Odin programming language with a search algorithm for decision making.
+                </p>
+            </div>
+        </a>
+        <a href="https://github.com/AAleka/imagecaption" target="_blank">
+            <div class="project">
+                <h2>
+                    Image captioning.
+                </h2>
+                <p>
+                    A vision transformer with natural language processing transformer deep learning model for image description/captioning in Python and PyTorch.
+                </p>
+            </div>
+        </a>
     </div>
 </body>
 
