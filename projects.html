@@ -54,17 +54,33 @@
         background-color: lightgoldenrodyellow;
         overflow: hidden;
         position: relative;
-        transition: width 0.5s ease, margin 0.5s ease; /* Add transition for margin */
+        transition: width 0.5s ease, margin 0.5s ease;
     }
 
     .project:hover {
-        width: calc(60% + 60px); /* Adjusted width on hover */
+        width: 80%;
     }
 
     .projects a {
         text-decoration: none;
         color: black;
-        display: block; /* Ensure the link takes up the entire space of the project */
+        display: block; 
+    }
+    
+    .project video {
+        width: 100%;
+        height: auto;
+    }
+    
+    .project img {
+        margin: 20px auto;
+        transition:transform 0.25s ease;
+    }
+
+    .project img:hover {
+        margin: 35px auto;
+        -webkit-transform:scale(1.3);
+        transform:scale(1.3);
     }
     /* Projects div block */
 </style>
@@ -80,7 +96,7 @@
     </nav>
     
     <div class="projects">
-        <a href="https://github.com/AAleka/chat-client" target="_blank">
+        <a href="https://github.com/AAleka/chat-server" target="_blank">
             <div class="project">
                 <h2>
                     Instant messaging application (Server).
@@ -90,7 +106,7 @@
                 </p>
             </div>
         </a>
-        <a href="https://github.com/AAleka/chat-server" target="_blank">
+        <a href="https://github.com/AAleka/chat-client" target="_blank">
             <div class="project">
                 <h2>
                     Instant messaging application (Client).
@@ -98,6 +114,10 @@
                 <p>
                     A C++ project with CMake and several libraries including ASIO for networking, OpenSSL for end-to-end encryption and decryption, GLFW, ImGui, and stb for the client-side GUI application. The client side includes a GUI part and a TCP connection with the server, which are run concurrently.   
                 </p>
+                <div style="text-align: center;">
+                    <video src="images/chat.mp4" controls></video>
+            
+                </div>
             </div>
         </a>
         <a href="https://github.com/AAleka/vsfm" target="_blank">
@@ -108,9 +128,14 @@
                 <p>
                     A C++ project with CMake and an ImGui library. It is supported on Windows and Linux systems.
                 </p>
+                <div style="text-align: center;">
+                    <img src="images/vsfm-1.png" width="30%">
+                    <img src="images/vsfm-2.png" width="30%">
+                    <img src="images/vsfm-3.png" width="30%">
+                </div>
             </div>
         </a>
-        <a href="https://github.com/AAleka/OnlyTasks" target="_blank">
+        <a href="https://github.com/AAleka/JustTasks" target="_blank">
             <div class="project">
                 <h2>
                     Desktop task managing application.
@@ -118,6 +143,9 @@
                 <p>
                     A C++ project with Qt and SQL. It is supported on Windows and Linux systems.
                 </p>
+                <div style="text-align: center;">
+                    <img src="images/JustTasks.png" width="30%">
+                </div>
             </div>
         </a>
         <a href="https://github.com/AAleka/Ades" target="_blank">
@@ -128,6 +156,10 @@
                 <p>
                     A project in HTML, CSS, JavaScript, and Python. It is run locallyusing Python server for storing tasks and plans.
                 </p>
+                <div style="text-align: center;">
+                    <img src="images/ades1.png" width="40%">
+                    <img src="images/ades2.png" width="40%">
+                </div>
             </div>
         </a>
         <a href="https://github.com/AAleka/taskmanager" target="_blank">
@@ -148,6 +180,9 @@
                 <p>
                     A deep learning project with Python and TensorFlow. A deep learning model trained to control a car in the Udacity car simulation.
                 </p>
+                <div style="text-align: center;">
+                    <iframe width="50%" height="315px" src="https://www.youtube.com/embed/fgMtfUBhtuM?si=2-lLnHmC1hznrxJO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
             </div>
         </a>
         <a href="https://github.com/AAleka/SteamDBScraper" target="_blank">
@@ -168,6 +203,9 @@
                 <p>
                     A console-based simulation in Odin programming language with a search algorithm for decision making.
                 </p>
+                <div style="text-align: center;">
+                    <video src="images/rockpaperscissor.webm" style="width: 30%; height: auto;" controls></video>
+                </div>
             </div>
         </a>
         <a href="https://github.com/AAleka/imagecaption" target="_blank">
