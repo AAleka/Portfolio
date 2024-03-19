@@ -39,15 +39,30 @@
     }
     /* Navigation Bar */
     
+    /* Info div block */
+    .info {
+        width: 60%;
+        height: auto;
+        margin: 30px auto;
+        position: relative;
+        background-color: lightgoldenrodyellow;
+    }
+    
+    .info p {
+        padding: 30px;
+        color: black;
+        text-align: left;
+    }
+    
     /* Projects div block */
     .projects {
-        margin: auto;
-        width: 100%;
+        margin: 20px auto;
+        width: 90%;
+        text-align: center;
     }
 
     .project {
         width: 60%;
-        border: 1px solid black;
         margin: 30px auto;
         padding: 30px;
         text-align: center;
@@ -56,20 +71,19 @@
         position: relative;
         transition: width 0.5s ease, margin 0.5s ease;
     }
+    
+    .project p {
+        text-align: left;
+    }
 
     .project:hover {
-        width: 75%;
+        width: 80%;
     }
 
     .projects a {
         text-decoration: none;
         color: black;
         display: block; 
-    }
-    
-    .project video {
-        width: 100%;
-        height: auto;
     }
     
     .project img {
@@ -81,6 +95,42 @@
         margin: 50px auto;
         -webkit-transform:scale(1.4);
         transform:scale(1.4);
+    }
+    
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding-top: 50px;
+    }
+
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 800px;
+    }
+
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .close:hover, .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
     }
     /* Projects div block */
 </style>
@@ -95,7 +145,76 @@
         </ul>
     </nav>
     
+    <div class="info">
+        <p>
+            On this page, I am sharing my professional and personal projects related to Artificial Intelligence and Software Development. Hovering the project details will enlarge the corresponding block allowing you to navigate to the project's web page. Additionally, hovering image will also increase their sizes, but if you want to view them in full size you can click on them.
+        </p>
+    </div>
+    
     <div class="projects">
+        <h1>Research Projects</h1>
+        <div class="project">
+            <a href="https://arxiv.org/abs/2308.08339" target="_blank">
+                <h2>
+                    Denoising Diffusion Probabilistic Model for Retinal Image Generation and Segmentation.
+                </h2>
+                <i>2023 IEEE International Conference on Computational Photography (ICCP).</i>
+                <p>
+                    In this work, I developed a novel lightweight version of Denoising Diffusion Probabilistic Model (DDPM) that was used to generate a paired dataset for retinal image segmentation, containing over 30,000 image pairs. The changes to DDPM's architecture allowed the increase of resolution from 64×64 up to 512×512 on NVIDIA RTX 2080 SUPER. As a result, the proposed changes decreased the image generation time by a factor of 2 compared to the original DDPM, while having better Frechet Inception Distance scores.
+                </p>
+                <img src="images/ddpms.jpg" width="45%"  class="project-image" onclick="openImage(event, this.src)">
+            </a>
+        </div>
+        <div class="project">
+            <a href="https://www.sciencedirect.com/science/article/pii/S2667099223000294" target="_blank">
+                <h2>
+                    A Hybrid Approach for retinal image super-resolution.
+                </h2>
+                <i>Biomedical engineering advances 6.</i>
+                <p>
+                    In this work, I proposed a novel fixed progressively growing super-resolution model that combines a vision transformer encoder and a convolutional neural network decoder. Another key feature is Adaptive Patch Embedding Layer that keeps the architecture unchanged when working with different image resolutions. The proposed model is lightweight allowing it to up-scale image up to 2048×2048.
+                </p>
+                <img src="images/srmodel.jpg" width="45%"  class="project-image" onclick="openImage(event, this.src)">
+            </a>
+        </div>
+        <div class="project">
+            <a href="https://arxiv.org/abs/2303.01939" target="_blank">
+                <h2>
+                    Retinal Image Restoration using Transformer and Cycle-Consistent Generative Adversarial Network.
+                </h2>
+                <i>2022 International Symposium on Intelligent Signal Processing and Communication Systems (ISPACS).</i>
+                <p>
+                    In this work, a novel lightweight Vision Transformer-based CycleGAN has been made to restore unpaired low-quality retinal images. A Vision Transformer Encoder was embedded in the network that significantly improved the results.
+                </p>
+                <img src="images/vitcyclegan.png" width="45%"  class="project-image" onclick="openImage(event, this.src)">
+            </a>
+        </div>
+        <div class="project">
+            <a href="https://arxiv.org/abs/2209.04234" target="_blank">
+                <h2>
+                    Retinal Image Restoration and Vessel Segmentation using Modified Cycle-CBAM and CBAM-UNet.
+                </h2>
+                <i>2022 Innovations in Intelligent Systems and Applications Conference (ASYU).</i>
+                <p>
+                    In this work, a CycleGAN and UNet have been modified to accomodate Convolution Block Attention Module (CBAM) for unpaired retinal image restoration and vessel segmentation. 
+                </p>
+                <img src="images/cbam.png" width="45%"  class="project-image" onclick="openImage(event, this.src)">
+            </a>
+        </div>
+    </div>
+    
+    <div class="projects">
+        <h1>Personal Projects</h1>
+        <div class="project">
+            <a href="https://aaleka.github.io/portfolio" target="_blank">
+                <h2>
+                    This website.
+                </h2>
+                <p>
+                    This website is made with HTML, CSS, and JavaScript and is hosted using GitHub Pages.  
+                </p>
+            </a>
+        </div>
         <div class="project">
             <a href="https://github.com/AAleka/chat-server" target="_blank">
                 <h2>
@@ -114,7 +233,7 @@
                 <p>
                     A C++ project with CMake and several libraries including ASIO for networking, OpenSSL for end-to-end encryption and decryption, GLFW, ImGui, and stb for the client-side GUI application. The client side includes a GUI part and a TCP connection with the server, which are run concurrently.   
                 </p>
-                <video src="images/chat.mp4" controls></video>
+                <video src="images/chat.mp4" style="width: 60%; height: auto;" controls></video>
             </a>
         </div>
         <div class="project">
@@ -125,9 +244,9 @@
                 <p>
                     A C++ project with CMake and an ImGui library. It is supported on Windows and Linux systems.
                 </p>
-                <img src="images/vsfm-1.png" width="30%">
-                <img src="images/vsfm-2.png" width="30%">
-                <img src="images/vsfm-3.png" width="30%">
+                <img src="images/vsfm-1.png" width="30%"  class="project-image" onclick="openImage(event, this.src)">
+                <img src="images/vsfm-2.png" width="30%"  class="project-image" onclick="openImage(event, this.src)">
+                <img src="images/vsfm-3.png" width="30%"  class="project-image" onclick="openImage(event, this.src)">
             </a>
         </div>
         <div class="project">
@@ -138,7 +257,7 @@
                 <p>
                     A C++ project with Qt and SQL. It is supported on Windows and Linux systems.
                 </p>
-                <img src="images/JustTasks.png" width="30%">
+                <img src="images/JustTasks.png" width="30%"  class="project-image" onclick="openImage(event, this.src)">
             </a>
         </div>
         <div class="project">
@@ -149,8 +268,8 @@
                 <p>
                     A project in HTML, CSS, JavaScript, and Python. It is run locallyusing Python server for storing tasks and plans.
                 </p>
-                <img src="images/ades1.png" width="40%">
-                <img src="images/ades2.png" width="40%">
+                <img src="images/ades1.png" width="40%"  class="project-image" onclick="openImage(event, this.src)">
+                <img src="images/ades2.png" width="40%"  class="project-image" onclick="openImage(event, this.src)">
             </a>
         </div>
         <div class="project">
@@ -206,6 +325,35 @@
             </a>
         </div>
     </div>
+    
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeImageModal()">&times;</span>
+        <img class="modal-content" id="fullSizeImage">
+    </div>
+    
+    <script>
+        function openImage(event, src) {
+            event.preventDefault();
+            var modal = document.getElementById("imageModal");
+            var img = document.getElementById("fullSizeImage");
+            img.src = src;
+            modal.style.display = "block";
+        }
+
+        // Close the modal when clicking on the close button or outside the modal
+        function closeImageModal() {
+            var modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+
+        // Close the modal when clicking outside the modal
+        window.onclick = function(event) {
+            var modal = document.getElementById("imageModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 
 </html>
