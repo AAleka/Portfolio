@@ -5,80 +5,85 @@
     <title>Portfolio</title>
     <link rel="icon" type="image/x-icon" href="/images/icon.ico">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <style>
+        :root {
+            --c1: white;
+            --c2: dimgray;
+            --c3: black;
+        }
+        
+        body {
+            background-color: var(--c3);
+            font-family: 'Montserrat';
+            color: var(--c1);
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Navigation Bar */
+        nav.navbar {
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999; /* Ensure the navbar stays on top of other content */
+            background-color: var(--c3);
+        }
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .navbar li {
+            display: inline-block;
+        }
+        .navbar a {
+            color: var(--c1);
+            display: block;
+            text-align: center;
+            padding: 15px;
+            font-size: 25px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: var(--c2);
+        }
+        /* Navigation Bar */
+        
+        /* PDF Viewer */
+        .pdf-container {
+            text-align: center;
+            margin-top: 100px;
+        }
+        .pdf-iframe {
+            width: 60%;
+            height: 90vh;
+        }
+        /* PDF Viewer */
+        
+        /* Footer */
+        footer {
+            background-color: var(--c3);
+            text-align: center;
+            padding: 20px 0;
+        }
+        footer a img {
+            width: 48px;
+            height: 48px;
+            padding: 10px;
+            border: 1px solid var(--c1);
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+        }
+        footer a img:hover {
+            transform: scale(1.2);
+        }
+        /* Footer */
+        
+    </style>
 </head>
-
-<style>
-    :root {
-        --c1: white;
-        --c2: dimgray;
-        --c3: black;
-    }
-    
-    body {
-        background-color: var(--c3);
-        font-family: 'Montserrat';
-        color: var(--c1);
-    }
-    
-    /* Navigation Bar */
-    nav.navbar {
-        text-align: center;
-    }
-    .navbar ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: var(--c3);
-    }
-    .navbar li {
-        border-radius: 20px;
-        display: inline-block;
-    }
-    .navbar a {
-        color: var(--c1);
-        display: block;
-        text-align: center;
-        padding: 15px;
-        font-size: 25px;
-        text-decoration: none;
-    }
-    .navbar a:hover {
-        background-color: var(--c2);
-    }
-    /* Navigation Bar */
-    
-    /* CV Table */
-    table, th, td {
-        border: 2px solid var(--c1);
-        border-collapse: collapse;
-    }
-    
-    table.cv {
-        width: 85%;
-        margin-top: 20px;
-        margin-left: auto; 
-        margin-right: auto;
-    }
-    .cv th {
-        text-align: center;
-    }
-    .cv td {
-        padding: 5px;
-        text-align: center;
-    }
-    
-    .cv li {
-        text-align: justify;
-        margin: 5px;
-    }
-    
-    a.credentials, a.credentials:visited {
-        text-decoration: none;
-        color: blue;
-    }
-    /* CV Table */
-</style>
     
 <body>
     <nav class="navbar">
@@ -89,157 +94,22 @@
         </ul>
     </nav>
     
-    <div style="text-align: center;">
-        <embed src="images/cv.pdf" width="50%;" height="1200px" type="application/pdf" />
+    <div class="pdf-container">
+        <iframe class="pdf-iframe" src="images/cv.pdf" type="application/pdf"></iframe>
     </div>
     
-<!--
-    <table class="cv">
-        <tr>
-            <th colspan="3">Alnur Alimanov<br><small>Istanbul, Turkey</small></th>
-        </tr>
-        <tr>
-            <td colspan="1"><a href="https://www.linkedin.com/in/alnur-alimanov-4b5518179/" target="_blank"><img src="images/linkedin.png" width="48px" height="48px" alt="LinkedIn"></a></td>
-            <td colspan="2"><a href="https://github.com/AAleka" target="_blank"><img src="images/github.png" width="48px" height="48px" alt="GitHub"></a></td>
-        </tr>
-        <tr>
-            <td colspan="3" style="text-align: justify;">
-                2+ years of experience in Deep Learning, Machine Learning, Python programming, and Computer Vision. Developed several novel deep learning models for medical image enhancement, super-resolution, segmentation, and generation. Published corresponding research works in international conferences and journals for such countries as the United States of America, Germany, Indonesia, and Turkey. Experience in C++, HTML, CSS and JavaScript programming.
-            </td>
-        </tr>
-        <tr>
-            <td colspan="3" style="text-align: justify;">
-                <strong>Skills</strong>: C++ | Python | C# | HTML | CSS | JavaScript | Git | Cmake | Docker | SQL | Deep Learning | Machine Learning | PyTorch | TensorFlow | Web scraping | Databases | Research and Development
-            </td>
-        </tr>
-        <tr>
-            <th>Projects</th>
-            <th colspan="2">Work History</th>
-        </tr>
-        <tr>
-            <td rowspan="5">
-                <ul>
-                    <li>A desktop client-server application for safe instant messaging in C++.<br><i>The application consists of a server and a client that includes such features as end-to-end encryption/decryption, SQL database storage, GUI, concurrency, and asynchronous communication over TCP in real time.</i> <a href="https://github.com/AAleka/chat-server/" target="_blank" class="credentials">Server</a>, <a href="https://github.com/AAleka/chat-client/" target="_blank" class="credentials">Client</a>.</li>
-                    <li>A desktop file manager in C++.<br><i>A fast and simple cross-platform GUI application for Linux and Windows systems.</i> <a href="https://github.com/AAleka/vsfm" target="_blank" class="credentials">GitHub</a>.</li>
-                    <li>A desktop task manager in C++ and Qt.<br><i>A simple cross-platform GUI application for Linux and Windows systems with SQLite support.</i> <a href="https://github.com/AAleka/JustTasks" target="_blank" class="credentials">GitHub</a>.</li>
-                    <li>A web planner application in HTML, CSS, JavaScript, and Python.<br><i>A web application that runs locally using Python server for storing tasks and plans.</i> <a href="https://github.com/AAleka/Ades" target="_blank" class="credentials">GitHub</a>.</li>
-                    <li>Task manager console application in C++.<br><i>A simple console application for storing tasks locally.</i> <a href="https://github.com/AAleka/taskmanager" target="_blank" class="credentials">GitHub</a>.</li>
-                    <li>Self-driving car simulation with Python, TensorFlow and Keras.<br><i>A deep learning model trained to control a car in the Udacity car simulation.</i> <a href="https://github.com/AAleka/SelfDrivingCarSimulation" target="_blank" class="credentials">GitHub</a>.</li>
-                    <li>Web-scraping application for SteamDB with Python in a Docker container.<br><i>A web-scraping application for SteamDB that notifies over email if there are available discounts for selected games with Selenium, a browser automation library for Python, inside a Docker container.</i> <a href="https://github.com/AAleka/SteamDBScraper" target="_blank" class="credentials">GitHub</a>.</li>
-                    <li>Rock, Scissor, Paper simulation with Odin programming language.<br><i>A console-based simulation with a search algorithm for decision making.</i> <a href="https://github.com/AAleka/RockPaperScissorSimulation" target="_blank" class="credentials">GitHub</a>.</li>
-                    <li>An image captioning deep learning model.<br><i>A vision transformer deep learning model for image description/captioning in Python and PyTorch.</i> <a href="https://github.com/AAleka/imagecaption" target="_blank" class="credentials">GitHub</a>.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <th>TÜBİTAK, Turkish state research organization.</th>
-            <td><i>03/2022 - present</i></td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <strong>Researcher</strong>
-                <ul>
-                    <li>Developed novel state-of-the-art Deep Learning models.</li>
-                    <li>Published research works at several international conferences in the United States of America, Indonesia and Turkey, and a scientific journal in Germany.</li>
-                    <li>Developed a lightweight state-of-the-art Denoising Diffusion Probabilistic Model for medical image generation.</li>
-                    <li>Developed an extensive medical image segmentation dataset for images of retina with over 30,000 images.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <th colspan="2">Published works:</th>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <ul>
-                    <li>“Retinal Image Restoration and Vessel Segmentation using Modified Cycle-CBAM and CBAM-UNet” (2022 Innovations in Intelligent Systems and Applications Conference). <a href="https://ieeexplore.ieee.org/document/9925325" target="_blank" class="credentials">DOI</a>. <a href="https://github.com/AAleka/Cycle-CBAM-and-CBAM-UNet" target="_blank" class="credentials">GitHub</a>. <a href="https://arxiv.org/abs/2209.04234" target="_blank" class="credentials">arXiv</a>.</li>
-                    <li>"Retinal Image Restoration using Transformer and Cycle-Consistent Generative Adversarial Network" (2022 The International Symposium on Intelligent Signal Processing and Communication Systems). <a href="https://doi.org/10.1109/ISPACS57703.2022.10082822" target="_blank" class="credentials">DOI</a>. <a href="https://github.com/AAleka/Transformer-Cycle-GAN" target="_blank" class="credentials">GitHub</a>. <a href="https://arxiv.org/abs/2303.01939" target="_blank" class="credentials">arXiv</a>.</li>
-                    <li>"A Hybrid Approach for Retinal Image Super-Resolution" (Visual Computing for Industry, Biomedicine, and Art Journal). <a href="https://doi.org/10.1016/j.bea.2023.100099" target="_blank" class="credentials">DOI</a>. <a href="https://github.com/AAleka/Retinal-Image-Super-Resolution-ViT-CNN" target="_blank" class="credentials">GitHub</a>.</li>
-                    <li>“Denoising Diffusion Probabilistic Model for Retinal Image Generation and Segmentation” (2023 International Conference on Computational Photography). <a href="https://ieeexplore.ieee.org/document/10233841" target="_blank" class="credentials">DOI</a>. <a href="https://github.com/AAleka/ReTree" target="_blank" class="credentials">GitHub</a>. <a href="https://arxiv.org/abs/2308.08339" target="_blank" class="credentials">arXiv</a>.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <th>Certificates and Awards</th>
-            <th>Home Credit Bank, international bank.</th>
-            <td><i>10/2020 - 03/2021</i></td>
-        </tr>
-        <tr>
-            <td rowspan="6">
-                <ul>
-                    <li><strong>International Information Technologies University</strong>: Full scholarship</li>
-                    <li><strong>Bahçeşehir University</strong>: Full scholarship from TÜBİTAK</li>
-                    <li><strong>Applied Data Science with Python</strong>: <a href="https://www.coursera.org/account/accomplishments/specialization/SEP2CW44E3TK" target="_blank" class="credentials">Credential</a>.</li>
-                    <li><strong>Learning C++</strong>: <a href="https://www.linkedin.com/learning/certificates/bcb69e40fbef7626f46495a32d8ea3a2803d08fc67addac413b1c86ed7518333" target="_blank" class="credentials">Credential</a>.</li>
-                    <li><strong>C++ Essential Training</strong>: <a href="https://www.linkedin.com/learning/certificates/5b487afa8421a54b151d35a648723d7f2f8508a22d9f4d334e2463c607ea60dc" target="_blank" class="credentials">Credential</a>.</li>
-                    <li><strong>C++ Templates and the STL</strong>: <a href="https://www.linkedin.com/learning/certificates/65ca99a6c6d61ea81389b3e9ea562a12d51f8a47f6d08211487b628b80b8c24b" target="_blank" class="credentials">Credential</a>.</li>
-                    <li><strong>Unity 2023 Essential Training</strong>: <a href="https://www.linkedin.com/learning/certificates/72517a52872240f3f92670b748eee3be4bf6e0938c6c703a43c172613a1fd070" target="_blank" class="credentials">Credential</a>.</li>
-                    <li><strong>Introduction to Career Skills in Software Development</strong>: <a href="https://www.linkedin.com/learning/certificates/158bf4b3e6ccbdc4c2afc76343ef47f6d85714bc568758542fdaeec004093201" target="_blank" class="credentials">Credential</a>.</li>
-                    <li><strong>Programming Foundations: Fundamentals</strong>: <a href="https://www.linkedin.com/learning/certificates/891555978f0ae0727149c807fcdcb2d36f5be4d9bf7ecc7bae1bab335e2e7938" target="_blank" class="credentials">Credential</a>.</li>
-                    <li><strong>Programming Foundations: Beyond the Fundamentals</strong>: <a href="https://www.linkedin.com/learning/certificates/34460782eb161a30c567626d655060d5381eb412fc24ee7f5b300f956a4def16" target="_blank" class="credentials">Credential</a>.</li>
-                    <li><strong>Career Essentials in Software Development by Microsoft and LinkedIn</strong>: <a href="https://www.linkedin.com/learning/certificates/4940c6c67ba7f85418fde3440845728a9e5d7201cfced004c5c430e198c4d3ea" target="_blank" class="credentials">Credential</a>.</li>
-                    <li><strong>Programming Foundations: Databases</strong>: <a href="https://www.linkedin.com/learning/certificates/8c269e607b3ea7aa3c8822e62b1621f61c395a9a3563dc3c41477e63dd0e81e9" target="_blank" class="credentials">Credential</a>.</li>
-                    <li><strong>Succeeding in Web Development: Full Stack and Front End</strong>: <a href="https://www.linkedin.com/learning/certificates/33d2aff31330d5e9a307dbf07166fa2e8cb41c9b3abab134ec7e909eb7d2e752" target="_blank" class="credentials">Credential</a>.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <strong>SQL Data Analyst intern</strong>
-                <ul>
-                    <li>Completed in the top 3 out of 100 interns.</li>
-                    <li>Learned SQL and data analysis.</li>
-                    <li>Worked on database management of the bank's transactions.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <th colspan="2">Education</th>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <strong>Bahçeşehir University</strong><br>
-                <ul>
-                    <li>MS of Artificial Intelligence (2021 - 2024)</li>
-                    <li>GPA: 3.84</li>
-                </ul>
-                <strong>International Information Technologies University</strong><br>
-                <ul>
-                    <li>BS of Mathematical Engineering (2017 - 2021)</li>
-                    <li>GPA: 3.36</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <th colspan="2">Languages</th>
-            
-        </tr>
-        <tr>
-            <td colspan="2">
-                <ul>
-                    <li>English (C1)</li>
-                    <li>Turkish (B2)</li>
-                    <li>Russian (C2)</li>
-                </ul>
-            </td>
-        </tr>
-    </table>
--->
-    
     <footer>
-        <div style="text-align: center; padding: 20px 50px;">
-            <div>
-                <h2>Let's get in touch!</h2>
-            </div>
-            <div>
-                <a href="https://www.linkedin.com/in/alnur-alimanov-4b5518179/" target="_blank">
-                    <img src="images/linkedin.png" width="48px" height="48px" alt="LinkedIn" style="padding: 10px; border: 1px solid var(--c1);">
-                </a>
+        <div>
+            <h2>Let's get in touch!</h2>
+        </div>
+        <div>
+            <a href="https://www.linkedin.com/in/alnur-alimanov-4b5518179/" target="_blank">
+                <img src="images/linkedin.png" alt="LinkedIn">
+            </a>
 
-                <a href="https://github.com/AAleka" target="_blank">
-                    <img src="images/github.png" width="48px" height="48px" alt="GitHub" style="padding: 10px; border: 1px solid var(--c1);">
-                </a>
-            </div>
+            <a href="https://github.com/AAleka" target="_blank">
+                <img src="images/github.png" alt="GitHub">
+            </a>
         </div>
     </footer>
 </body>
