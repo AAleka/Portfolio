@@ -3,13 +3,22 @@
 
 <head> 
     <title>Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="images/icon.ico">
+    <link rel="icon" type="image/x-icon" href="/images/icon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 </head>
 
 <style>
+    :root {
+        --c1: white;
+        --c2: dimgray;
+        --c3: black;
+    }
+    
     body {
-        background-color: floralwhite;
-        font-family: Arial, Helvetica, sans-serif;
+        background-color: var(--c3);
+        font-family: 'Montserrat';
+        color: var(--c1);
+        font-size: 20px;
     }
     
     /* Navigation Bar */
@@ -21,21 +30,22 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color: darkolivegreen;
+        background-color: var(--c3);
     }
     .navbar li {
+        border-radius: 20px;
         display: inline-block;
     }
     .navbar a {
+        color: var(--c1);
         display: block;
-        color: azure;
         text-align: center;
         padding: 15px;
         font-size: 25px;
         text-decoration: none;
     }
     .navbar a:hover {
-        background-color:darkgreen;
+        background-color: var(--c2);
     }
     /* Navigation Bar */
     
@@ -45,12 +55,11 @@
         height: auto;
         margin: 30px auto;
         position: relative;
-        background-color: lightgoldenrodyellow;
+        border: 2px solid var(--c1);
     }
     
     .info p {
         padding: 30px;
-        color: black;
         text-align: left;
     }
     
@@ -66,10 +75,10 @@
         margin: 30px auto;
         padding: 30px;
         text-align: center;
-        background-color: lightgoldenrodyellow;
         overflow: hidden;
         position: relative;
         transition: width 0.5s ease, margin 0.5s ease;
+        border: 2px solid var(--c1);
     }
     
     .project p {
@@ -82,16 +91,16 @@
 
     .projects a {
         text-decoration: none;
-        color: black;
+        color: var(--c1);
         display: block; 
     }
     
-    .project img {
+    .project img, .project video, .project iframe {
         margin: 20px auto;
-        transition:transform 0.25s ease;
+        transition: transform 0.25s ease;
     }
 
-    .project img:hover {
+    .project img:hover, .project video:hover, .project iframe:hover {
         margin: 50px auto;
         -webkit-transform:scale(1.4);
         transform:scale(1.4);
@@ -141,7 +150,6 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="cv.html">CV</a></li>
             <li><a href="projects.html">Projects</a></li>
-            <li><a href="https://www.linkedin.com/in/alnur-alimanov-4b5518179" target="_blank">Contact me</a></li>
         </ul>
     </nav>
     
@@ -174,7 +182,7 @@
                 <p>
                     In this work, I proposed a novel fixed progressively growing super-resolution model that combines a vision transformer encoder and a convolutional neural network decoder. Another key feature is Adaptive Patch Embedding Layer that keeps the architecture unchanged when working with different image resolutions. The proposed model is lightweight allowing it to up-scale image up to 2048×2048.
                 </p>
-                <img src="images/srmodel.jpg" width="45%"  class="project-image" onclick="openImage(event, this.src)">
+                <img src="images/srmodel.jpg" width="40%"  class="project-image" onclick="openImage(event, this.src)">
             </a>
         </div>
         <div class="project">
@@ -311,7 +319,7 @@
                 <p>
                     A console-based simulation in Odin programming language with a search algorithm for decision making.
                 </p>
-                <video src="images/rockpaperscissor.webm" style="width: 30%; height: auto;" controls></video>
+                <video src="images/rockpaperscissor.webm" style="width: 20%; height: auto;" controls></video>
             </a>
         </div>
         <div class="project">
@@ -325,6 +333,23 @@
             </a>
         </div>
     </div>
+    
+    <footer>
+        <div style="text-align: center; padding: 20px 50px;">
+            <div>
+                <h2>Let's get in touch!</h2>
+            </div>
+            <div>
+                <a href="https://www.linkedin.com/in/alnur-alimanov-4b5518179/" target="_blank">
+                    <img src="images/linkedin.png" width="48px" height="48px" alt="LinkedIn" style="padding: 10px; border: 1px solid var(--c1);">
+                </a>
+
+                <a href="https://github.com/AAleka" target="_blank">
+                    <img src="images/github.png" width="48px" height="48px" alt="GitHub" style="padding: 10px; border: 1px solid var(--c1);">
+                </a>
+            </div>
+        </div>
+    </footer>
     
     <div id="imageModal" class="modal">
         <span class="close" onclick="closeImageModal()">&times;</span>

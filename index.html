@@ -4,12 +4,20 @@
 <head> 
     <title>Portfolio</title>
     <link rel="icon" type="image/x-icon" href="/images/icon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 </head>
 
 <style>
+    :root {
+        --c1: white;
+        --c2: dimgray;
+        --c3: black;
+    }
+    
     body {
-        background-color: floralwhite;
-        font-family: Arial, Helvetica, sans-serif;
+        background-color: var(--c3);
+        font-family: 'Montserrat';
+        color: var(--c1);
     }
     
     /* Navigation Bar */
@@ -21,27 +29,28 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color: darkolivegreen;
+        background-color: var(--c3);
     }
     .navbar li {
+        border-radius: 20px;
         display: inline-block;
     }
     .navbar a {
+        color: var(--c1);
         display: block;
-        color: azure;
         text-align: center;
         padding: 15px;
         font-size: 25px;
         text-decoration: none;
     }
     .navbar a:hover {
-        background-color:darkgreen;
+        background-color: var(--c2);
     }
     /* Navigation Bar */
     
     /* About div block */
     div.about {
-        background-image: url("images/luke-chesser-pJadQetzTkI-unsplash.jpg");
+        border: 2px solid var(--c1);
         background-repeat: no-repeat;
         margin: 30px auto;
         width: 80%;
@@ -58,22 +67,20 @@
     .text {
         width: 60%;
         font-size: 25px;
-        color: azure;
         text-align: left;
         margin: auto 10px;
-        background: linear-gradient(to right, #F0FFFF, #F8F8FF, #FFFFF0, #eedd44);
-        -webkit-text-fill-color: transparent; 
-        -webkit-background-clip: text; 
     }
     /* About div block */
     
     /* Slideshow container */
     .slideshow-container {
         width: 80%;
-        height: auto;
+        height: 300px;
         margin: auto;
         position: relative;
-        background: linear-gradient(to right, #F0FFFF, #F8F8FF, #FFFFF0, #eedd44);
+        border-top: 2px solid var(--c1);
+        border-left: 2px solid var(--c1);
+        border-right: 2px solid var(--c1);
     }
     .mySlides {
         display: none;
@@ -91,11 +98,11 @@
         width: auto;
         margin-top: -30px;
         padding: 16px;
-        color: #888;
         font-weight: bold;
         font-size: 20px;
         border-radius: 0 3px 3px 0;
         user-select: none;
+        border: 2px solid var(--c1);
     }
     .next {
         position: absolute;
@@ -103,28 +110,29 @@
         border-radius: 3px 0 0 3px;
     }
     .prev:hover, .next:hover {
-        background-color: rgba(0,0,0,0.8);
-        color: white;
+        background-color: var(--c2);
     }
     .dot-container {
         text-align: center;
         padding: 10px 0;
         width: 80%;
         margin: auto;
-        background: linear-gradient(to right, #F0FFFF, #F8F8FF, #FFFFF0, #eedd44);
+        border-left: 2px solid var(--c1);
+        border-right: 2px solid var(--c1);
+        border-bottom: 2px solid var(--c1);
     }
     .dot {
         cursor: pointer;
         height: 15px;
         width: 15px;
         margin: 0 2px;
-        background-color: #bbb;
+        background-color: var(--c2);
         border-radius: 50%;
         display: inline-block;
         transition: background-color 0.6s ease;
     }
     .active, .dot:hover {
-        background-color: #717171;
+        background-color: var(--c1);
     }
     /* Slideshow container */
     
@@ -152,7 +160,6 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="cv.html">CV</a></li>
             <li><a href="projects.html">Projects</a></li>
-            <li><a href="https://www.linkedin.com/in/alnur-alimanov-4b5518179" target="_blank">Contact me</a></li>
         </ul>
     </nav>
     
@@ -207,7 +214,24 @@
       <span class="dot" onclick="currentSlide(3)"></span> 
       <span class="dot" onclick="currentSlide(4)"></span> 
     </div>
+    
+    <footer>
+        <div style="text-align: center; padding: 20px 50px;">
+            <div>
+                <h2>Let's get in touch!</h2>
+            </div>
+            <div>
+                <a href="https://www.linkedin.com/in/alnur-alimanov-4b5518179/" target="_blank">
+                    <img src="images/linkedin.png" width="48px" height="48px" alt="LinkedIn" style="padding: 10px; border: 1px solid var(--c1);">
+                </a>
 
+                <a href="https://github.com/AAleka" target="_blank">
+                    <img src="images/github.png" width="48px" height="48px" alt="GitHub" style="padding: 10px; border: 1px solid var(--c1);">
+                </a>
+            </div>
+        </div>
+    </footer>
+    
     <script>
         var slideIndex = 1;
         showSlides(slideIndex);
@@ -237,24 +261,6 @@
         }
     </script>
     
-    
-<!--
-    <div class="motivation">
-        <h2>About</h2>
-        <p>
-            At my last workplace at the TÜBİTAK research organization, I worked as a researcher developing novel computer vision deep learning models. I have a total of 4 projects that are published online and that were presented at the international conferences and journals in the United States of America, Germany, Indonesia and Turkey. In my last work, I have proposed a novel lightweight Denoising Diffusion Probabilistic Model for medical image generation along with an extensive dataset for medical image segmentation.
-        </p>
-        <p>
-            I have developed several console, web, and desktop applications as my personal projects. For instance, in my latest project I developed a client-server application for instant messaging. I utilized C++ and several libraries including ASIO for networking, OpenSSL for end-to-end encryption and decryption, GLFW, ImGui, and stb for the client-side GUI application, and SQLite3 for database management.
-        </p>
-        <p>
-            In another latest project, I have developed a C++ GUI file manager application available on Linux and Windows. The application is made with C++ standard library along with ImGui for the GUI part. Additionally, I have other projects in C++, C#, HTML, CSS, JavaScript, and Python made with Docker, Git, and CMake that are available in my CV. 
-        </p>
-        <p>
-            I am always motivated to learn something new, and I am confident that this trait will help me to contribute a lot in my career path. As part of my bachelor’s degree, I studied Mathematical Engineering at International Information Technologies University in Almaty, Kazakhstan, where I have acquired such skills as programming in C++, Python, HTML, CSS, JavaScript, SQL, and a solid mathematical background. Currently, I am pursuing a master’s degree at Bahçeşehir University in Istanbul, Turkey, studying Artificial Intelligence Engineering.
-        </p>
-    </div>
--->
 </body>
 
 </html>
