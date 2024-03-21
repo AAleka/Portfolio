@@ -80,6 +80,7 @@
         /* About div block */
 
         /* Slideshow container */
+/*
         .slideshow-container {
             width: 80%;
             height: 300px;
@@ -141,8 +142,29 @@
         .active, .dot:hover {
             background-color: var(--c1);
         }
+*/
         /* Slideshow container */
+        
+        /* Cards container */
+        .cards {
+            width: 80%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            justify-content: center;
+            margin: 0 auto;
+        }
 
+        .card {
+            font-size: 18px;
+            text-align: center;
+            border: 2px solid white;
+            flex: 1;
+            padding: 20px;
+            max-width: 300px;
+        }
+        /* Cards container */
+        
         /* Footer */
         footer {
             background-color: var(--c3);
@@ -205,8 +227,20 @@
                 </p>
             </div>
         </div>
+        
+        <div class="cards">
+            <div class="card">
+                Over the past two years, I have honed my expertise in Python programming, Deep Learning, and Computer Vision, garnering practical experience that spans across various projects. Notably, during my tenure at TÜBİTAK research organization, I contributed to the development of innovative computer vision deep learning models. Several of my projects have been published and presented at esteemed international conferences and journals, underscoring my commitment to delivering high-quality work.
+            </div>
+            <div class="card">
+                My proficiency extends beyond programming languages to encompass a diverse range of tools and technologies, including Git, CMake, Docker, and web scraping. Among my notable personal projects is a client-server application for instant messaging, where I leveraged C++, ASIO, ImGui, SQLite, and OpenSSL to ensure secure real-time communication. Additionally, I have developed a GUI file manager application available on both Linux and Windows platforms, showcasing my versatility across different environments.
+            </div>
+            <div class="card">
+                My academic background in Mathematical Engineering from International Information Technologies University and further studies in Artificial Intelligence Engineering at Bahçeşehir University have equipped me with a solid foundation in programming and artificial intelligence. Continuously motivated to expand my knowledge and skill set, I am confident in my ability to contribute effectively to your company's objectives.
+            </div>
+        </div>
 
-
+<!--
         <div class="slideshow-container">
 
             <div class="mySlides">
@@ -240,6 +274,7 @@
           <span class="dot" onclick="currentSlide(3)"></span> 
           <span class="dot" onclick="currentSlide(4)"></span> 
         </div>
+-->
 
         <footer>
             <div>
@@ -256,6 +291,7 @@
             </div>
         </footer>
 
+<!--
         <script>
             var slideIndex = 1;
             showSlides(slideIndex);
@@ -284,6 +320,7 @@
                 dots[slideIndex-1].className += " active";
             }
         </script>
+-->
 
     </body>
 
